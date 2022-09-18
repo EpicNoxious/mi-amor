@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+
+<div class="container">
+      <div id="alert">
+        {% include 'alert.html' %}
+      </div>
+</div>
+<h1>Success</h1>
+<h2>Great! you have successfully registered/logged in!</h2>
+{{ session['logged_in'] }}
+
+<h4>Name: {{ session['user']['name'] }}</h4>
+<h5>Mail: {{ session['user']['email'] }}</h5>
+<h5>Gender: {{ session['user']['gender'] }}</h5>
+<h5>Gender: {{ session['user']['dob'] }}</h5>
+<h5>Gender: {{ session['user']['height'] }}</h5>
+<h5>Gender: {{ session['user']['profession'] }}</h5>
+<h5>Interest: {{ session['user']['interest'] }}</h5>
+<h5>Category: {{ session['user']['category'] }}</h5>
+
+<img src="{{ session['user']['profile'] }}" alt="Buddha" width="40" height="40" style="border-radius: 50%;">
+<br>
+<br>
+
+<form name="signout_form" method="POST">
+    <div>
+        {{ signout.csrf_token }}
+        <input
+               type="submit"
+               name="btn"
+               value="{{ signout.find_match.label.text }}"
+                  />
+        <input
+               type="submit"
+               name="btn"
+               value="{{ signout.signout.label.text }}"
+                  />
+    </div>
+</form>
+
+</body>
+</html>

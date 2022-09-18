@@ -1,0 +1,234 @@
+<!-- 1.)TODO-:Make the testimonials scrollable -->
+<!-- 2.)TODO-:Change button font to icons-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mi-amor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script type="module" src="{{ url_for('static', filename='js/controller.js') }}"></script>
+  </head>
+  <body>
+    <main>
+      <aside class="nav" id="nav">
+        <p class="nav__title">mi</p>
+        <ul class="nav__nav">
+          <li class="nav__link">
+            <a href="#nav" class="nav__item">mi-amor</a>
+          </li>
+          <li class="nav__link">
+            <a href="#features" class="nav__item">features</a>
+          </li>
+          <li class="nav__link">
+            <a href="#users" class="nav__item">reviews</a>
+          </li>
+          <li class="nav__link">
+            <a href="#footer" class="nav__item">contact us</a>
+          </li>
+        </ul>
+        <a class="btn btn--bordered" href="{{ url_for('login') }}" style="text-decoration: none">Sign Up</a>
+      </aside>
+      <header class="hero">
+        <h1 class="heading__primary">mi-amor</h1>
+        <p class="hero__subtitle">love knows no boundries</p>
+        <aside class="hero__buttons">
+          <button class="btn" href="#footer">know more</button>
+          <a class="btn btn--bordered" href="{{ url_for('login') }}" style="text-decoration: none">Sign Up</a>
+        </aside>
+        <img src="../static/img/traingle.svg" alt="traingle shapes" class="svg svg__1" />
+        <img src="../static/img/lines.svg" alt="traingle shapes" class="svg svg__2" />
+        <img src="../static/img/heart.svg" alt="traingle shapes" class="svg svg__3" />
+        <img src="../static/img/circle1.svg" alt="traingle shapes" class="svg svg__4" />
+      </header>
+      <section class="features section-scroll" id="features">
+        <h2 class="heading__secondary section">
+          Features of <span>mi-amor</span>
+        </h2>
+        <article class="feature__box">
+          <div class="feature__card">
+            <figure>
+              <img
+                src="../static/img/people_search.svg"
+                alt="Person searching on application"
+                class="feature__img"
+              />
+            </figure>
+            <h3 class="heading__tertiary heading__tertiary--1">search</h3>
+            <p class="feature__desc">
+              find your perfect partner by searching through the many choices
+              our app has to offer
+            </p>
+          </div>
+          <div class="feature__card card__active section">
+            <figure>
+              <img
+                src="../static/img/match_people.svg"
+                alt="Person searching on application"
+                class="feature__img"
+              />
+            </figure>
+            <h3 class="heading__tertiary heading__tertiary--2">match</h3>
+            <p class="feature__desc">
+              match with your person by swiping right on the application and get
+              ready cause a real sweet convo awaits you !
+            </p>
+          </div>
+          <div class="feature__card">
+            <figure>
+              <img
+                src="../static/img/venture.svg"
+                alt="Person searching on application"
+                class="feature__img"
+              />
+            </figure>
+            <h3 class="heading__tertiary heading__tertiary--3">venture</h3>
+            <p class="feature__desc">
+              hooray! now its time to go out on some coffee dates, movie nights
+              etc . Its your time have fun
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="testimonials section-scroll" id="users">
+        <h2 class="heading__secondary section">Happy <span>users</span></h2>
+        <div class="testimonial__box">
+          <article class="testimonial testimonial--active">
+            <img
+              src="../static/img/testimonial-1.jpg"
+              alt="Women user of mi-amor"
+              class="testimonial__img"
+            />
+            <aside class="testimonial__desc">
+              <blockquote class="testimonial__para">
+                "This application was a gamechanger for me , previously i was
+                very very scared to go out and ask out people but after using
+                mi-amor i found myself a lovely person who accepts me the way i
+                am!"
+              </blockquote>
+              <p class="testimonial__author">~ lisa williams</p>
+              <p class="testimonial__designation">tennis player</p>
+            </aside>
+          </article>
+
+          <button class="circle__btn circle__btn--right">&rarr;</button>
+          <button class="circle__btn circle__btn--left">&larr;</button>
+        </div>
+      </section>
+      <section class="why section-scroll">
+        <h2 class="heading__secondary section">
+          Why choose <span>mi-amor</span>
+        </h2>
+        <article class="why__chose-us">
+          <div class="card">
+            <div class="card__icon">
+              <ion-icon
+                name="happy-outline"
+                class="card__icon--main"
+              ></ion-icon>
+            </div>
+            <p class="card__para">
+              client satisfaction is the most important to us
+            </p>
+          </div>
+          <div class="card">
+            <div class="card__icon">
+              <ion-icon
+                name="shield-outline"
+                class="card__icon--main"
+              ></ion-icon>
+            </div>
+            <p class="card__para">
+              client safety against harrasment and bullying
+            </p>
+          </div>
+          <div class="card">
+            <div class="card__icon">
+              <ion-icon
+                name="flash-outline"
+                class="card__icon--main"
+              ></ion-icon>
+            </div>
+            <p class="card__para">quick and easy search results</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">
+              <ion-icon
+                name="heart-outline"
+                class="card__icon--main"
+              ></ion-icon>
+            </div>
+            <p class="card__para">find your loved one at the right place</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">
+              <ion-icon name="beer-outline" class="card__icon--main"></ion-icon>
+            </div>
+            <p class="card__para">
+              venture with your loved one in any club or any place
+            </p>
+          </div>
+        </article>
+        <aside>
+          <button class="btn btn--bordered">Find some love</button>
+        </aside>
+      </section>
+    </main>
+    <footer class="footer" id="footer">
+      <p class="footer__heading section">About Us</p>
+      <p class="footer__para">
+        we are a group of developers who always think of way to make people life
+        easier in any way possible, developing mi-amor was the one thing that we
+        loved the most as it solved the problem of people of LGBTQ dramtically
+      </p>
+      <p class="footer__heading section">Team members</p>
+      <div class="footer__names">
+        <div class="footer__box">
+          <img
+            src="../static/img/rudra.png"
+            alt="Image of Rudra pratap singh"
+            class="footer__img"
+          />
+          <p class="footer__name">rudra pratap singh</p>
+        </div>
+        <div class="footer__box">
+          <img
+            src="../static/img/jappreet.png"
+            alt="Image of Jappreet singh"
+            class="footer__img"
+          />
+          <p class="footer__name">jappreet singh</p>
+        </div>
+        <div class="footer__box">
+          <img
+            src="../static/img/sonal.png"
+            alt="Image of Sonal singh"
+            class="footer__img"
+          />
+          <p class="footer__name">sonal singh</p>
+        </div>
+        <div class="footer__box">
+          <img
+            src="../static/img/ketan.png"
+            alt="Image of Ketan raaz"
+            class="footer__img"
+          />
+          <p class="footer__name">ketan raaz</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

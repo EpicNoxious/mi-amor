@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
+    <title>Jessie</title>
+</head>
+<body>
+    <div class="profile-pic-1" style="background-image: linear-gradient(to bottom, rgba(240, 125, 234, 0.381), rgba(164, 96, 237, 0.626),rgba(150, 232, 228, 0.556)), url('{{ session['user']['profile'] }}');">
+        <header>
+                <nav class="site-nav">
+                    <ul>
+                      <li><a href="">mi</a></li>
+                        <li><a href="">features</a></li>
+                        <li><a href="">reviews</a></li>
+                        <li><a href="">about us</a></li>
+                        <li><a href="">contact us</a></li>
+                        <li><a class="btn btn--bordered" href="{{ url_for('find') }}" style="text-decoration: none">find match</a></li>
+                    </ul> 
+                </nav>
+        </header>
+            <div class="circle"></div>
+            <div class="circle1"></div>
+              <div class="triangle"></div>
+              <div class="triangle1"></div>
+                <span id="quotes">A life lived I love will never be dull
+              </span>
+              <span id="sex">Female, 22</span>
+              <div class="btn_wrap">
+                <span>share profile</span>
+                <div class="btn_cont">
+                    <a href="https://www.facebook.com/ketan.raaz"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/raaz.ketan/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://twitter.com/raazketan"><i class="fa fa-twitter"></i></a>
+                    <a href="https://github.com/Raaz16"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+     </div>
+
+            <div class="about-profile">
+              <div class="profile-image">
+                <img src="{{ session['user']['profile'] }}" alt="">
+                <div class="fname">{{ session['user']['name'] }}</div>
+                <div class="username">{{ session['user']['email'] }}</div>
+                <div class="profile-icons">
+                  <a href="https://www.facebook.com/ketan.raaz"><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/raaz.ketan/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://twitter.com/raazketan"><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+              <br>
+              <div class="about">
+              <h3 class="bio">ABOUT</h3>
+              <p>Needs a guy with confidence like an INTERNET EXPLORER  that dares to ask you to make it your default browser stil.</p>
+              <ul>
+                <li>{{ session['user']['category'][0] }}</li>
+                <li>{{ session['user']['category'][1] }}</li>
+                <li>{{ session['user']['category'][2] }}</li>
+                <li>{{ session['user']['category'][3] }}</li>
+              </ul>
+              <br>
+            </div>
+          </div>
+            <div class="additional-info">
+              <h3>additional info</h3>
+              <form action="" >
+                <label for="password">password</label>
+                <br>
+                <br>
+                <input type="password" id="password" placeholder="{{ session['user']['password'] }}" readonly><br>
+
+                <label for="height">height</label>
+                <br>
+                <br>
+                <input type="text" id="height" placeholder="{{ session['user']['height'] }}" readonly><br />
+
+                <label for="dob">date-of-birth</label>
+                <br><br>
+                <input type="text" id="dob" placeholder="{{ session['user']['dob'] }}" readonly><br>
+
+                <label for="passion">profession</label>
+                <br><br>
+                <input type="text" id="passion" placeholder="{{ session['user']['profession'] }}" readonly>
+              <br />
+              <label for="language">language</label>
+              <br><br>
+              <select id="language" >
+                <option value="English">english</option>
+              </select>
+              <br>
+              <label for="looking">intrested</label>
+              <br><br>
+              <select id="looking"  >
+                  <option value="Female">{{ session['user']['interest'] }}</option>
+              </select>
+                <p class="show-me">show me on mi-amor</p>
+                <div class="show-me-checkbox">
+                    <label class="switch" for="checkbox">
+                      <input type="checkbox" id="checkbox" checked>
+                      <div class="slider round"></div>
+                    </label>
+                    </div>
+              </form>
+            </div>
+            </div>
+              <!-- Footer -->
+        <footer class="site-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <h6>mi-amor</h6>
+                <p class="money">No Money Required</p>
+                <p class="start">Start using mi-amor today.</p>
+                <input type="email" name="eemail" id="eemail" placeholder="Your Email">
+              </div>
+              <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                  <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                  <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                  <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                  <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+             <a href="#">Mi-Amor</a>.
+                </p>
+              </div>
+    
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+                </ul>
+              </div>
+            </div>
+          </div>
+    </footer>
+</body>
+<script src="../static/profile.js"></script>
+</html>

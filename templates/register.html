@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Sign Up OR Sign In</title>
+<style>
+    .turbo-flash{
+     animation:fadeout0.5s 1;
+    -webkit-animation:fadeout 0.5s 1;
+    animation-fill-mode: forwards;
+
+    animation-delay:2s;
+    -webkit-animation-delay:1s; /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+
+}
+
+@keyframes fadeout{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+
+@-webkit-keyframes fadeout{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+</style>
+    {{ turbo() }}
+</head>
+<body>
+{% block content %}
+
+
+<div class="container">
+      <div id="alert">
+        {% include 'alert.html' %}
+      </div>
+</div>
+
+
+<h1>Sign Up Form</h1>
+
+<form name="signup_form" method="POST">
+    <div>
+        {{ signup.csrf_token }}
+        {{ signup.name.label.text }}: {{ signup.name }}
+        {{ signup.email.label.text }}: {{ signup.email }}
+        {{ signup.gender.label.text }}: {{ signup.gender }}
+        {{ signup.dob.label.text }}: {{ signup.dob }}
+        {{ signup.height.label.text }}: {{ signup.height }}
+        {{ signup.profession.label.text }}: {{ signup.profession }}
+        {{ signup.interest.label.text }}: {{ signup.interest }}
+        {{ signup.category.label.text }}: {{ signup.category }}
+        {{ signup.password.label.text }}: {{ signup.password }}
+        {{ signup.confirm_password.label.text }}: {{ signup.confirm_password }}
+        {{ signup.signup }}
+    </div>
+</form>
+{% endblock %}
+</body>
+</html>

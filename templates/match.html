@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+
+
+<h2>Your Details</h2>
+        <h4>Name: {{ session['user']['name'] }}</h4>
+        <h5>Mail: {{ session['user']['email'] }}</h5>
+        <h5>Gender: {{ session['user']['gender'] }}</h5>
+        <h5>Interest: {{ session['user']['interest'] }}</h5>
+        <h5>Category: {{ session['user']['category'] }}</h5>
+
+<h2>Matched User</h2>
+    {% for match in match_list %}
+        <h4>Name: {{ match['name'] }}</h4>
+        <h5>Mail: {{ match['email'] }}</h5>
+        <h5>Gender: {{ match['gender'] }}</h5>
+        <img src="{{ match['profile'] }}" width="40" height="40" style="border-radius: 50%;" alt="Buddha">
+        <h5>Interest: {{ match['interest'] }}</h5>
+        <h5>Category: {{ match['category'] }}</h5>
+<span>-------------</span>
+    {% endfor %}
+</body>
+</html>
